@@ -1,0 +1,65 @@
+<?php
+
+# ver 0.1
+
+# parent of the working directories, 777 permissions
+SCRATCH
+
+# directory with wflow scripts
+HTML_ROOT
+$WFLOW_DIR = "$HTML_ROOT/wflow";             # don't change this
+
+# wflow server
+WFLOW_SERVER
+
+# gSOAP dir
+$GSOAP = "$SCRATCH/gSOAP";
+
+# directory for WFLOW CGI
+CGI_ROOT
+$WFLOW_CGI = "$CGI_ROOT/wflow";                   # don't change this
+
+$MAXPARAMS = 1024; # max input params to a service
+
+# wsdl globals
+$wsdl_values;
+$wsdl_index;
+
+# executables
+curl
+dot
+
+function readWsdl($filename)
+{
+  global $wsdl_values;
+  global $wsdl_index;
+  $wsdl = implode("", file($filename));
+  $parser = xml_parser_create();
+  xml_parser_set_option($parser, XML_OPTION_SKIP_WHITE, 1);
+  xml_parse_into_struct($parser, $wsdl, $wsdl_values, $wsdl_index);
+  xml_parser_free($parser);
+}
+
+
+# Copyright (C) 2005, University of Alaska Fairbanks
+# Biotechnology Computing Research Group
+# http://iab-devel.iab.alaska.edu
+# jim.long@iab.alaska.edu
+# All rights reserved.
+
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+ 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, 
+# Boston, MA  02110-1301, USA.
+
+?>

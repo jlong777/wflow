@@ -1,0 +1,14 @@
+Installation ver 0.2
+====================
+1) Download and install gSOAP, http://gsoap2.sourceforge.net and Graphviz,
+   http://www.graphviz.org
+   The things needed from bashlib (http://bashlib.sourceforge.net) and 
+   Tigra Tree Menu (http://www.softcomplex.com/products/tigra_tree_menu)
+   are included in this distribution.
+2) edit the first section of install_wflow.sh to conform to your site
+3) run install_wflow.sh as root
+
+notes
+=====
+OS X: dot in Graphviz.app is located in Graphviz.app/Contents/MacOS/dot, so make
+      a link from there to /usr/bin/dot

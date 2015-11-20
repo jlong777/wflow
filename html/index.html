@@ -1,0 +1,19 @@
+<!-- ver 0.2                                05/2013  jlong@alaska.edu -->
+<html><head>
+<title>WFLOW</title>
+</head>
+
+<body>
+<form  method="post" action="/wflow/init.php" enctype="multipart/form-data">
+<input type="hidden" name="MAX_FILE_SIZE" value="512000">
+<p>
+<input type="submit" value="Upload" /> file with a list of one or more WSDL URLs, one per line:<br>
+<p>
+<strong>Filename</strong>:
+<input name="wsdl_locations" size=50 type="file" />
+<p>
+The file you upload should have an entry like: <br>
+http://wsdl_provider.com/path/web_services.wsdl<br>
+</form>
+</body>
+</html>
